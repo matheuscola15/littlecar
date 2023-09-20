@@ -1,37 +1,21 @@
-import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import Detalhe from "./components/Detalhe";
+import React from "react"
+import { View, Image ,Text, StyleSheet} from "react-native"
+import logo from '/littlecar/assets/logo.png'
 
-import Topo from "./components/Topo";
-
-const width = Dimensions.get("screen").width;
-
-export default function Carrinho() {
-    return(
-    <>
-        <Topo/>
-        <View style={style.carrinho}>
-            <Detalhe/>
+export default function Detalhe(){
+    return<>
+        <Text style={style.nome}>Carrinho de Compras</Text>
+        <View style={style.fazenda}>
+            <Image source={logo} style={style.imagemFazenda}/>
+        <Text style={style.nomeFazenda}>Fazenda Etec Cidade do Livro</Text>
         </View>
+        <Text style={style.descricao}>Uma cesta com produtos selecionados cuidadosamente
+            da fazenda direto para a sua cozinha.</Text>
+        <Text style={style.preco}>R$ 40,00</Text>
     </>
-    )
 }
 
 const style = StyleSheet.create({
-    topo: {
-        width: "100%",
-        height: 578 / 768 * width,
-    },
-    titulo: {
-        width: "100%",
-        position: "absolute",
-        color: "white",
-        textAlign: "center",
-        fontSize: 24,
-        lineHeight: 26,
-        padding: 16,
-        fontFamily: "MontSerratBold"
-    },
     carrinho: {
         paddingVertical: 8,
         paddingHorizontal: 16,
