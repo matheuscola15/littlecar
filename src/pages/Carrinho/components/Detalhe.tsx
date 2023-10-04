@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Image ,Text, StyleSheet} from "react-native"
+import { View, Image ,Text, StyleSheet, TouchableOpacity} from "react-native"
 import logo from '/littlecar/assets/logo.png'
 
 type Props = {
@@ -18,6 +18,9 @@ export default function Detalhe({nome, nomeFazenda, descricao, preco}: Props){
         </View>
         <Text style={style.descricao}>{descricao}</Text>
         <Text style={style.preco}>{preco}</Text>
+        <TouchableOpacity style={style.botao}>
+            <Text style={style.textobotao}>Comprar</Text>
+        </TouchableOpacity>
     </>
 }
 
@@ -35,6 +38,20 @@ const style = StyleSheet.create({
     fazenda: {
         flexDirection: "row",
         paddingVertical: 12
+    },
+    botao: {
+        marginTop: 16,
+        backgroundColor: "#2a9f85",
+        paddingVertical: 16,
+        borderRadius: 6
+    },
+    textobotao: {
+        textAlign: "center" ,
+        color: "#fff",
+        fontSize: 16,
+        lineHeight: 26,
+        fontFamily: "MontSerratBold"
+
     },
     imagemFazenda: {
         width: 32,
