@@ -2,16 +2,22 @@ import React from "react"
 import { View, Image ,Text, StyleSheet} from "react-native"
 import logo from '/littlecar/assets/logo.png'
 
-export default function Detalhe(){
+type Props = {
+    nome: string,
+    nomeFazenda: string,
+    descricao: string,
+    preco: string
+}
+
+export default function Detalhe({nome, nomeFazenda, descricao, preco}: Props){
     return<>
-        <Text style={style.nome}>Carrinho de Compras</Text>
+        <Text style={style.nome}>{nome}</Text>
         <View style={style.fazenda}>
             <Image source={logo} style={style.imagemFazenda}/>
-        <Text style={style.nomeFazenda}>Fazenda Etec Cidade do Livro</Text>
+        <Text style={style.nomeFazenda}>{nomeFazenda}</Text>
         </View>
-        <Text style={style.descricao}>Uma cesta com produtos selecionados cuidadosamente
-            da fazenda direto para a sua cozinha.</Text>
-        <Text style={style.preco}>R$ 40,00</Text>
+        <Text style={style.descricao}>{descricao}</Text>
+        <Text style={style.preco}>{preco}</Text>
     </>
 }
 
